@@ -6,6 +6,8 @@ const connectToDB = require('./config/db')
 
 // Body Parser
 app.use(express.json());
+app.use('view engine', 'ejs');
+app.use(express.static('public'));
 
 // Load dotenv variables into server.js
 dotenv.config({path: './config/config.env'});
