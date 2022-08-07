@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const fragranceSchema = new mongoose.Schema({
     name: {
+        type: String,
         require: [true, 'Please add a fragrance name'],
         unique: true,
         trim: true,
