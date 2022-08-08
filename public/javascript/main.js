@@ -1,7 +1,7 @@
 document.getElementById('submit').addEventListener('submit', addFragrance);
 
 async function addFragrance(e) {
-    e.preventDefault()
+    
 
     const fName = document.getElementById('name').value;
     const fBrand = document.getElementById('brand').value;
@@ -9,18 +9,18 @@ async function addFragrance(e) {
     const fType = document.getElementById('type').value;
 
     try {
-        const res = await fetch ('http://localhost:3000/api/v1/fragrances' {
+        const res = await fetch ('http://localhost:3000/api/v1/fragrances', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-                'fragranceName': fName,
-                'fragranceBrand': fBrand,
-                'fragranceCategory': fCategory,
-                'fragranceType': fType
-            });
-        });
+                'name': fName,
+                'brand': fBrand,
+                'category': fCategory,
+                'type': fType
+            })
+        }); 
         const data = await res.json();
-        location.reload();
+        console.log(data)
     } catch(err) {
         console.log(err);
     }

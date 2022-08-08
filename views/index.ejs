@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
     <title>Fragrance Database</title>
 </head>
 <body>
     <h1>Add a Fragrance</h1>
     <form action="/api/v1/fragrances" method="POST">
-        <input id="name" type="text" placeholder="Name" name="fragranceName">
-        <input id="brand" type="text" placeholder="Brand" name="fragranceBrand">
-        <input id="category" type="text" placeholder="Category" name="fragranceCategory">
-        <input id="type" type="text" placeholder="Type" name="fragranceType">
+        <input id="name" type="text" placeholder="Name" name="name">
+        <input id="brand" type="text" placeholder="Brand" name="brand">
+        <input id="category" type="text" placeholder="Category" name="category">
+        <input id="type" type="text" placeholder="Type" name="type">
         <input id="submit" type="submit">
     </form>
+    <script src="/javascript/main.js"></script>
 </body>
 </html>

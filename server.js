@@ -4,7 +4,10 @@ const PORT = process.env.PORT || 3000;
 const dotenv = require('dotenv');
 const connectToDB = require('./config/db');
 const path = require('path');
+const cors = require('cors');
 
+app.use(cors());
+app.use(express.urlencoded({ extended: true }))
 
 // Body Parser
 app.use(express.json());
@@ -19,14 +22,13 @@ connectToDB();
 const fragrances = require('./routes/fragrances');
 
 // Set static folder and view engine
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 // EJS render
 app.get('/', (req, res) => {
-        res.render('index.ejs')
-    });
-
+    res.render('index.ejs');
+});
 
 // Mount Routes
 app.use('/api/v1/fragrances', fragrances);
