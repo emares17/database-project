@@ -21,6 +21,7 @@ async function addFragrance(e) {
         }); 
         const data = await res.json();
         console.log(data)
+        location.reload
     } catch(err) {
         console.log(err);
     }

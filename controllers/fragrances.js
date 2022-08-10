@@ -23,11 +23,12 @@ exports.getFragrances = async (req, res, next) => {
 exports.createFragrance = async (req, res) => {
     try {
         const fragrance = await fragrances.create(req.body);
-        res.status(201).json({
+        res.location('/')
+        res.status(302).json({
             success: true,
             data: fragrance
-        });
-        
+        })
+        // res.render('index.ejs');
     } catch(err) {
         res.status(400).json({
             success: false
