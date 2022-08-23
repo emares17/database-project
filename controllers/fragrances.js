@@ -1,4 +1,4 @@
-const fragrances = require('../models/fragrances');
+const fragrances = require('../models/Fragrances');
 
 // Description: Get all fragrances
 // Route: GET /api/v1/fragrances
